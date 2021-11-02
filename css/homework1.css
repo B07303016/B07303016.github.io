@@ -1,0 +1,17 @@
+.jumbotron{
+    font-family: 'Poppins', serif;
+    background-image:
+    url("https://cdn2.ettoday.net/images/5943/5943007.jpg");
+    color:powderblue;
+    font-style: Poppins;
+    background-position:50% 80%;
+    height: 50vh;
+    
+}
+
+#footer {
+    width: 1000px;
+    height: 100px;
+    background-color: skyblue;
+    clear: both;
+}
