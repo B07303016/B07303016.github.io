@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="outer" style="height:700vh;">
+        <img class="opa" src="https://img.onl/Q08HiF"
+            style="position: fixed;height: 100vh; opacity: 1;width: 100vw;z-index: 6;" data-pos="1">
+        <img class="opa" src="https://img.onl/3NX8Lb"
+            style="position: fixed;height: 100vh;opacity: 1;width: 100vw;z-index: 5;" data-pos="2">
+        <img class="opa" src="https://img.onl/qyCtlF"
+            style="position: fixed;height: 100vh;opacity: 1;width: 100vw;z-index: 4;" data-pos="3">
+        <img class="opa" src="https://img.onl/noJEKL"
+            style="position: fixed;height: 100vh;opacity: 1;width: 100vw;z-index: 3;" data-pos="4">
+        <img class="opa" src="https://img.onl/mvpvm2"
+            style="position: fixed;height: 100vh;opacity: 1;width: 100vw;z-index: 2;" data-pos="5">
+        <img class="opa" src="https://img.onl/Oc2NE9"
+            style="position: fixed;height: 100vh;opacity: 1;width: 100vw;z-index: 1;" data-pos="6">
+    </div>
+    
+    <div style=" height:100vh;background-color: dodgerblue">
+        <h1 class="text-center">福島核災十週年，我們應該借鏡什麼？</h1>
+        <div style="height: 12vh;">
+            <p1 >隨著公投接近，台灣面臨到許多電力議題和狀況，如近期多處停電，時有台灣缺電的聲音出現；兩兆風電民眾不見成果，夏季一到便處處缺電。</p1>
+        </div>
+        <div style="height: 15vh;">
+            <p1 >延宕未起的核四在這樣的現況下再度被拿出來討論，便宜乾淨的核能發電或許是我們的最佳解。可以看見藻礁相關的三接案，同樣也是因應電力不足，需要一塊能夠發電用地才引發的價值爭論：我們需要電還是環境永續？但似乎只要重啟核四，許多問題便迎刃而解。</p1>
+        </div>
+        <div style="height: 6vh;">
+            <p1 >但真有如此簡單嗎？</p1>
+        </div>
+        <div style="height: 12vh;">
+            <p1 >2011年3月11日星期五，發生眾人皆知的311大地震。往後引起的海嘯姑且不提，大家最擔心的核能問題便成為最佳案例。當時造成將近20000人身亡，12萬戶民眾無家可歸，受災人數高達47萬名。</p1>
+        </div>
+        <div style="height: 13vh;">
+            <p1 >我們似乎陷入一個價值爭辯：要核電，便能得到便宜乾淨的電；但重點是，發生事故的機率多高？影響又多深遠？長久的好處一定小於這微乎其微發生的機率嗎？</p1>
+        </div>
+        <div style="height: 20vh;">
+            <p1 >筆者在此不論價值評判。但我們看見福島核災十年後，半徑20公里的地方仍存有輻射不能人居；當時也馬上緊急建設12萬戶的社會住宅，當地的產業沒落到近年才恢復到事發之前的產值90%。關於整理事發的核能發電廠，也因為新冠疫情造成延宕，十年之久未能處理。日本總共在此次事件花費40兆的經費，且數字持續上升。</p1>
+        </div>
+        <div style="height: 12vh;">
+            <p1 >台灣地形相對日本狹小，倘若一旦因為地震等等事故勢必影響更大。在貿然決定重啟核四之前，或許值得再想想。</p1>
+        </div>
+    </div>
+
+    <div style=" height:20vh;background-color: gray">
+        <p2 class="text-center">筆者：臺大經濟系 紀泰永</p2>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>
+        $(function () {
+            var scrollable = $("#outer").height();
+            $(window).scroll(function () {
+                var scrolled = $(document).scrollTop();
+                $(".opa").each(function () {
+                    $(this).css("opacity", $(this).data("pos") - (6 * scrolled) / scrollable);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
