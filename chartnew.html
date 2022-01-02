@@ -1,0 +1,147 @@
+<!doctype html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div style="height:100vh;background-color:royalblue"></div>
+    <div style="height:100vh;">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 style="text-align: center;color:#ffbaa2">基隆總人口數</h1>
+                <div><canvas id="myChart1" width="100" height="50"></canvas></div>
+            </div>
+            <div class="col-md-6">
+                <h1 style="text-align: center;color:#91cf96">基隆老年人口比例</h1>
+                <div><canvas id="myChart2" width="100" height="50"></canvas></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:100vh;background-color:gray"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+<script>
+    var ctx = document.getElementById('myChart1').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['100年', '101年', '102年', '103年', '104年', '105年', '106年', '107年', '108年', '109年', '110年', ],
+            datasets: [{
+                label: '總人口數',
+                yAxisID: 'A',
+                borderColor: '#ffbaa2',
+                backgroundColor: 'white',
+                data: [383680, 379742, 377021, 374799, 373011, 372019, 372044, 371317, 369305, 368184,
+                    365591
+                ],
+                fill: false
+            }]
+        },
+        options: {
+            tooltips: {
+                mode: 'nearest'
+            },
+            scales: {
+                yAxes: [{
+                    id: 'A',
+                    type: 'linear',
+                    position: 'left',
+                    ticks: {
+                        min: 350000,
+                        max: 400000,
+                        stepSize: 10000,
+                        fontColor: '#ffbaa2',
+                        callback: function (value, index, values) {
+                            return value + ' 人';
+                        }
+                    }
+                }, ]
+            },
+            elements: {
+                line: {
+                    tension: 0, // disables bezier curves
+                },
+                point: {
+                    radius: 4,
+                    borderWidth: 2,
+                    pointStyle: 'circle'
+                }
+            }
+
+        }
+    });
+
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['100年', '101年', '102年', '103年', '104年', '105年', '106年', '107年', '108年', '109年', '110年', ],
+            datasets: [{
+                label: '老年人口比例',
+                yAxisID: 'B',
+                borderColor: '#91cf96',
+                backgroundColor: 'white',
+                data: [11.03 , 11.22, 11.59, 12.03, 12.64,13.27,14.04,14.90,16.19,17.15,18.14],
+                fill: false
+            }]
+        },
+        options: {
+            tooltips: {
+                mode: 'nearest'
+            },
+            scales: {
+                yAxes: [{
+                    id: 'B',
+                    type: 'linear',
+                    position: 'left',
+                    ticks:  {
+                        min: 10,
+                        max: 20,
+                        stepSize: 1,
+                        fontColor: '#91cf96',
+                        callback: function (value, index, values) {
+                            return value + ' ％';
+                        }
+                    }
+                } ]
+            },
+            elements: {
+                line: {
+                    tension: 0, // disables bezier curves
+                },
+                point: {
+                    radius: 4,
+                    borderWidth: 2,
+                    pointStyle: 'circle'
+                }
+            }
+
+        }
+    });
+</script>
+
+</html>
